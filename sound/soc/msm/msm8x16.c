@@ -68,7 +68,7 @@
 #define LPASS_CSR_GP_LPAIF_PRI_PCM_PRI_MODE_MUXSEL 0x07702008
 #define EXT_CLASS_D_EN_DELAY 13000
 #define EXT_CLASS_D_DELAY_DELTA 2000
-#define AW8155A_MODE 5
+#define AW8155A_MODE 3
 
 static struct delayed_work lineout_amp_enable;
 static struct delayed_work lineout_amp_dualmode;
@@ -3327,7 +3327,7 @@ static int msm8x16_asoc_machine_probe(struct platform_device *pdev)
 	if (!pdata) {
 		dev_err(&pdev->dev, "Can't allocate msm8x16_asoc_mach_data\n");
 		ret = -ENOMEM;
-		goto err;
+		goto err1;
 	}
 
 	pdata->vaddr_gpio_mux_spkr_ctl =
@@ -3560,6 +3560,7 @@ err:
 	if (pdata->vaddr_gpio_mux_pcm_ctl)
 		iounmap(pdata->vaddr_gpio_mux_pcm_ctl);
 	devm_kfree(&pdev->dev, pdata);
+err1:
 	return ret;
 }
 
