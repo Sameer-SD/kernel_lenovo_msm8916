@@ -68,7 +68,7 @@
 #define LPASS_CSR_GP_LPAIF_PRI_PCM_PRI_MODE_MUXSEL 0x07702008
 #define EXT_CLASS_D_EN_DELAY 13000
 #define EXT_CLASS_D_DELAY_DELTA 2000
-#define AW8155A_MODE 5
+#define AW8155A_MODE 3
 
 static struct delayed_work lineout_amp_enable;
 static struct delayed_work lineout_amp_dualmode;
