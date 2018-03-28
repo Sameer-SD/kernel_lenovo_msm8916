@@ -13,7 +13,7 @@
 /dts-v1/;
 
 #include "msm8929.dtsi"
-#include "A6020/A6020.dtsi"
+#include "A6020/A6020-common.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. MSM8939 QRD SKUK";

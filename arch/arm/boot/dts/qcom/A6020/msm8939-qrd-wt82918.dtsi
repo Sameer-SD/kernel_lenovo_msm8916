@@ -10,7 +10,7 @@
  * GNU General Public License for more details.
  */
 
-#include "msm8939-qrd.dtsi"
+#include "msm8939-qrd-A6020.dtsi"
 #include "msm8939-camera-sensor-qrd.dtsi"
 
 &soc {

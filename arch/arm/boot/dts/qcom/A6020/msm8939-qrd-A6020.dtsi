@@ -10,10 +10,34 @@
  * GNU General Public License for more details.
  */
 
+#include "../msm8939-qrd.dtsi"
+#include "msm8939-pinctrl.dtsi"
+
 &soc {
-       sec_boot_fuse: secbootfuse@0x5c098 {
-               compatible = "qcom,sec-boot-fuse";
-               reg = <0x5c098 0x4>;
-               reg-names = "sec-boot-base";
-       };
+	gpio_keys {
+
+		home_key {
+			label = "home";
+			gpios = <&msm_gpio 108 0x1>;
+			linux,input-type = <1>;
+			linux,code = <102>;
+			gpio-key,wakeup;
+			debounce-interval = <15>;
+		};
+	};
+};
+
+&sdhc_1 {
+	qcom,vdd-always-on;
+};
+
+&sdhc_2 {
+	cd-gpios = <&msm_gpio 38 0x1>;
+};
+
+&apc_vreg_corner {
+        /delete-property/ vdd-apc-supply;
+	qcom,cpr-step-quotient = <26>;
+	qcom,cpr-apc-volt-step = <12500>;
+	qcom,cpr-up-threshold = <2>;
 };
