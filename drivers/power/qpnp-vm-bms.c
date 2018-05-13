@@ -1518,8 +1518,8 @@ static void check_eoc_condition(struct qpnp_bms_chip *chip)
 		}
 	} else {
 		if (chip->last_ocv_uv >= chip->ocv_at_100) {
-			pr_debug("new_ocv(%d) > ocv_at_100(%d) maintaining SOC to 100,batt_temp is %d\n",
-					chip->last_ocv_uv, chip->ocv_at_100,batt_temp);
+			pr_debug("new_ocv(%d) > ocv_at_100(%d) maintaining SOC to 100\n",
+					chip->last_ocv_uv, chip->ocv_at_100);
 			chip->ocv_at_100 = chip->last_ocv_uv;
 			chip->last_soc = 100;
 		} else if (chip->last_soc != 100) {
