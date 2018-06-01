@@ -1,0 +1,20 @@
+ccflags-y += -Idrivers/media/platform/msm/camera_v2_A6020
+ccflags-y += -Idrivers/media/platform/msm/camera_v2_A6020/sensor
+ccflags-y += -Idrivers/media/platform/msm/camera_v2_A6020/codecs
+ccflags-y += -Idrivers/media/platform/msm/camera_v2_A6020/isps
+ccflags-y += -Idrivers/media/platform/msm/camera_v2_A6020/pproc
+ccflags-y += -Idrivers/media/platform/msm/camera_v2_A6020/msm_vb2
+ccflags-y += -Idrivers/media/platform/msm/camera_v2_A6020/camera
+ccflags-y += -Idrivers/media/platform/msm/camera_v2_A6020/jpeg_10
+ccflags-y += -Idrivers/media/platform/msm/camera_v2_A6020/fd
+
+obj-$(CONFIG_MSMB_CAMERA) += msm.o
+obj-$(CONFIG_MSMB_CAMERA) += camera/
+obj-$(CONFIG_MSMB_CAMERA) += msm_vb2/
+obj-$(CONFIG_MSMB_CAMERA) += sensor/
+obj-$(CONFIG_MSMB_CAMERA) += pproc/
+obj-$(CONFIG_MSMB_CAMERA) += isp/
+obj-$(CONFIG_MSMB_CAMERA) += ispif/
+obj-$(CONFIG_MSMB_JPEG) += jpeg_10/
+obj-$(CONFIG_MSMB_CAMERA) += msm_buf_mgr/
+obj-$(CONFIG_MSM_FD) += fd/
